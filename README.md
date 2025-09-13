@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# Mini Seller Console
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight React application for managing leads and converting them into opportunities. Built as a technical assessment project showcasing modern React development practices.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Leads Management**: View, search, filter, and sort leads by various criteria
+- **Lead Details**: Inline editing with validation for email and status fields
+- **Lead Conversion**: Convert qualified leads into opportunities with auto-generated data
+- **Opportunities Tracking**: Simple table view for converted opportunities
+- **Data Persistence**: Local storage for maintaining data across sessions
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Dark/Light Theme**: Toggle between themes with system preference detection
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** + **TypeScript**
+- **Vite** for build tooling
+- **Tailwind CSS** for styling
+- **TanStack Query** for data fetching and caching
+- **TanStack Table** for advanced table functionality
+- **Radix UI** for accessible components
+- **Zod** for form validation
+- **Local JSON** data source with simulated API latency
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. **Install dependencies:**
+   ```bash
+   yarn install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Start development server:**
+   ```bash
+   yarn dev
+   ```
+
+3. **Build for production:**
+   ```bash
+   yarn build
+   ```
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+├── hooks/              # Custom React hooks
+├── lib/                # Services and utilities
+├── types/              # TypeScript type definitions
+└── app/                # Application layout and entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Key Features Implemented
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+✅ **MVP Requirements:**
+- Leads list with search, filter, and sort
+- Lead detail panel with inline editing
+- Lead to opportunity conversion
+- Loading, empty, and error states
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+✅ **Nice-to-Haves:**
+- localStorage persistence for filters
+- Optimistic updates with rollback
+- Responsive layout (desktop → mobile)
+
+## Data Flow
+
+1. Loads initial data from `data-leads.json`
+2. Stores in localStorage for persistence
+3. Simulates API calls with 500ms delay
+4. Handles 5% simulated failure rate for error testing
+
+---
+
+*This project demonstrates clean architecture, modern React patterns, and attention to user experience details.*
