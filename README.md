@@ -1,7 +1,5 @@
 # Mini Seller Console
 
-A lightweight React application for managing leads and converting them into opportunities. Built as a technical assessment project showcasing modern React development practices.
-
 ## Features
 
 - **Leads Management**: View, search, filter, and sort leads by various criteria
@@ -39,30 +37,6 @@ A lightweight React application for managing leads and converting them into oppo
    ```bash
    yarn build
    ```
-
-## Project Structure
-
-```
-src/
-├── components/          # Reusable UI components
-├── hooks/              # Custom React hooks
-├── lib/                # Services and utilities
-├── types/              # TypeScript type definitions
-└── app/                # Application layout and entry point
-```
-
-## Key Features Implemented
-
-✅ **MVP Requirements:**
-- Leads list with search, filter, and sort
-- Lead detail panel with inline editing
-- Lead to opportunity conversion
-- Loading, empty, and error states
-
-✅ **Nice-to-Haves:**
-- localStorage persistence for filters
-- Optimistic updates with rollback
-- Responsive layout (desktop → mobile)
 
 ## Data Flow
 
